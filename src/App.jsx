@@ -1,16 +1,51 @@
-import { Title, Container } from "./styles";
+import {
+  Title,
+  Container,
+  TopBackground,
+  Form,
+  ContainerInput,
+  Input,
+  Button,
+  InputLabel,
+} from "./styles";
 
-function App() {
+import UsersImage from "./assets/users.png";
+
+function Home() {
   return (
     <>
       <Container>
-        <h1 style={{ color: "blue", fontSize: 70 }}>Olá Olá</h1>
-        <p>Teste</p>
-        <p>Teste2</p>
-        <Title>Ok React</Title>
+        <TopBackground>
+          <img src={UsersImage} />
+        </TopBackground>
+
+        <Form>
+          <Title>Ok React</Title>
+          <ContainerInput>
+            <div>
+              <InputLabel>
+                Nome<span> *</span>
+              </InputLabel>
+              <Input type="text" placeholder="Nome do usuário" />
+            </div>
+            <div>
+              <InputLabel>
+                Idade<span> *</span>
+              </InputLabel>
+              <Input type="number" placeholder="Idade do usuário" />
+            </div>
+          </ContainerInput>
+          <div style={{ width: "100%" }}>
+            <InputLabel>
+              E-mail<span> *</span>
+            </InputLabel>
+            <Input type="email" placeholder="E-mail do usuário" />
+          </div>
+          <Button>Cadastrar Usuário</Button>
+        </Form>
       </Container>
     </>
   );
 }
 
-export default App;
+export default Home;
