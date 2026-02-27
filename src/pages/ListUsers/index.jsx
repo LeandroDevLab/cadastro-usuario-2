@@ -1,8 +1,16 @@
+import Button from "../../components/Button";
+import TopBackground from "../../components/TopBackground";
+
 function ListUsers() {
   return (
-    <div>
-      <h1>Listagem de usuários</h1>
-    </div>
+    <>
+      <TopBackground />
+      <div>
+        <h1>Listagem de usuários</h1>
+      </div>
+
+      <Button>Voltar</Button>
+    </>
   );
 }
 

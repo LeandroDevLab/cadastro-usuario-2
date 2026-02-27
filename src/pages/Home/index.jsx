@@ -1,18 +1,10 @@
 import { useRef } from "react";
 import api from "../../services/api";
 
-import {
-  Title,
-  Container,
-  TopBackground,
-  Form,
-  ContainerInput,
-  Input,
-  Button,
-  InputLabel,
-} from "./styles";
+import { Title, Container, Form, ContainerInput, Input, InputLabel } from "./styles";
 
-import UsersImage from "../../assets/users.png";
+import Button from "../../components/Button";
+import TopBackground from "../../components/TopBackground";
 
 function Home() {
   //useRef, criar uma referência em tempo real de algum lugar, no caso um input
@@ -33,9 +25,7 @@ function Home() {
   return (
     <>
       <Container>
-        <TopBackground>
-          <img src={UsersImage} />
-        </TopBackground>
+        <TopBackground />
 
         <Form>
           <Title>Ok React</Title>
@@ -60,10 +50,11 @@ function Home() {
             </InputLabel>
             <Input type="email" placeholder="E-mail do usuário" ref={inputEmail} />
           </div>
-          <Button type="button" onClick={registerNewUser}>
+          <Button type="button" onClick={registerNewUser} theme="primary">
             Cadastrar Usuário
           </Button>
         </Form>
+        <Button type="button">Ver lista de Usuários</Button>
       </Container>
     </>
   );
