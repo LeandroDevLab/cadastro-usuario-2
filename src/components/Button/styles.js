@@ -12,6 +12,7 @@ export const MyButton = styled.button`
   border-radius: 30px;
   width: fit-content;
   transition: all 0.4s ease-in-out;
+  margin: auto;
 
   &:hover {
     ${(props) =>

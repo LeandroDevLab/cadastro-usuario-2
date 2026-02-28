@@ -2,10 +2,11 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../services/api";
 
-import { Title, Container, Form, ContainerInput, Input, InputLabel } from "./styles";
+import { Container, Form, ContainerInput, Input, InputLabel } from "./styles";
 
 import Button from "../../components/Button";
 import TopBackground from "../../components/TopBackground";
+import Title from "../../components/Title";
 
 function Home() {
   //useRef, criar uma referência em tempo real de algum lugar, no caso um input
@@ -15,13 +16,22 @@ function Home() {
 
   const navigate = useNavigate();
 
+  function clearInput() {
+    inputEmail.current.value = "";
+    inputName.current.value = "";
+    inputAge.current.value = "";
+    alert("Usuário cadastrado com sucesso!");
+  }
+
   async function registerNewUser() {
-    const data = await api.post("/usuarios", {
+    await api.post("/usuarios", {
       email: inputEmail.current.value,
       age: parseInt(inputAge.current.value),
       name: inputName.current.value,
     });
-    console.log(data);
+
+    clearInput();
+    //console.log(data);
     //console.log(inputName.current.value);
   }
 
