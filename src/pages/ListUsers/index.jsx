@@ -16,11 +16,10 @@ import {
   Input,
   Fechar,
   Form,
+  EditIcon,
 } from "./styles";
 
-import { FaWindowClose, FaPenSquare } from "react-icons/fa";
-
-import Trash from "../../assets/trash.svg";
+import { FaWindowClose } from "react-icons/fa";
 
 function ListUsers() {
   const inputName = useRef();
@@ -130,8 +129,8 @@ function ListUsers() {
               <p>{user.age}</p>
               <p>{user.email}</p>
             </div>
-            <TrashIcon src={Trash} onClick={() => deleteUser(user.id)} />
-            <FaPenSquare onClick={() => openUpdateModal(user)} />
+            <TrashIcon onClick={() => deleteUser(user.id)} />
+            <EditIcon onClick={() => openUpdateModal(user)} />
           </CardUsers>
         ))}
       </ContainerUsers>

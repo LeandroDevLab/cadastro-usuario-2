@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FaPenSquare, FaRegTrashAlt } from "react-icons/fa";
 
 export const Container = styled.div`
   background-color: #181f36;
@@ -21,7 +22,7 @@ export const ContainerUpdate = styled.div`
   max-width: 600px;
   min-height: 50vh;
   border-radius: 32px;
-  position: absolute;
+  position: fixed;
   top: 100px;
   left: auto;
   z-index: 2;
@@ -79,12 +80,27 @@ export const CardUsers = styled.div`
   }
 `;
 
-export const TrashIcon = styled.img`
+export const EditIcon = styled(FaPenSquare)`
+  font-size: 24px;
+  color: #fff;
   cursor: pointer;
-  padding-left: 30px;
+
+  &:hover {
+    color: #00bfff;
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+`;
+
+export const TrashIcon = styled(FaRegTrashAlt)`
+  font-size: 22px;
+  color: #fff;
+  width: 30px;
+  cursor: pointer;
 
   &:hover {
     opacity: 0.8;
+    color: #ff0000;
   }
 
   &:active {
