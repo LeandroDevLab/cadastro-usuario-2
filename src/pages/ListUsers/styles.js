@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaPenSquare, FaRegTrashAlt } from "react-icons/fa";
+import { FaPenSquare, FaRegTrashAlt, FaWindowClose } from "react-icons/fa";
 
 export const Container = styled.div`
   background-color: #181f36;
@@ -26,6 +26,33 @@ export const ContainerUpdate = styled.div`
   top: 100px;
   left: auto;
   z-index: 2;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0px;
+    border-radius: 32px;
+    z-index: -1;
+    /*     pointer-events: none;
+ */
+    animation: shadowTransition 4s linear infinite;
+  }
+
+  @keyframes shadowTransition {
+    0%,
+    100% {
+      box-shadow: 4px 4px 14px #046af0;
+    }
+    25% {
+      box-shadow: -4px 4px 14px #046af0;
+    }
+    50% {
+      box-shadow: -4px -4px 14px #046af0;
+    }
+    75% {
+      box-shadow: 4px -4px 14px #046af0;
+    }
+  }
 `;
 
 export const Fechar = styled.div`
@@ -78,6 +105,15 @@ export const CardUsers = styled.div`
     font-size: 14px;
     font-weight: 200;
   }
+
+  @media (max-width: 400px) {
+    gap: 4px;
+  }
+`;
+
+export const Gonfigurators = styled.div`
+  display: flex;
+  gap: 2px;
 `;
 
 export const EditIcon = styled(FaPenSquare)`
@@ -101,6 +137,8 @@ export const TrashIcon = styled(FaRegTrashAlt)`
   &:hover {
     opacity: 0.8;
     color: #ff0000;
+    transform: scale(1.1);
+    transition: 0.2s;
   }
 
   &:active {
@@ -126,6 +164,10 @@ export const Form = styled.form`
 export const ContainerInput = styled.div`
   display: flex;
   gap: 20px;
+
+  @media (max-width: 425px) {
+    flex-direction: column;
+  }
 `;
 
 export const Input = styled.input`

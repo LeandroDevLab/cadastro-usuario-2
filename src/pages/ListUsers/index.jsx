@@ -17,6 +17,7 @@ import {
   Fechar,
   Form,
   EditIcon,
+  Gonfigurators,
 } from "./styles";
 
 import { FaWindowClose } from "react-icons/fa";
@@ -129,8 +130,10 @@ function ListUsers() {
               <p>{user.age}</p>
               <p>{user.email}</p>
             </div>
-            <TrashIcon onClick={() => deleteUser(user.id)} />
-            <EditIcon onClick={() => openUpdateModal(user)} />
+            <Gonfigurators>
+              <TrashIcon onClick={() => deleteUser(user.id)} />
+              <EditIcon onClick={() => openUpdateModal(user)} />
+            </Gonfigurators>
           </CardUsers>
         ))}
       </ContainerUsers>
